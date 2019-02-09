@@ -13,15 +13,6 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-var deferredPrompt;
-var btnAdd = document.createElement('button');
-document.getElementsByTagName('body')[0].appendChild(btnAdd);
-
 window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    btnAdd.addEventListener('click', (e) => {
         deferredPrompt.prompt();
-
-    });
 });
