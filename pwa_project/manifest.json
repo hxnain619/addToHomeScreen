@@ -5,7 +5,7 @@
   "background_color": "#f6f4f2",
   "display": "standalone",
   "Scope": "/",
-  "start_url": "/",
+  "start_url": "/addToHomeScreen/pwa_project/index.html",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
