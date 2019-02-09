@@ -14,5 +14,5 @@ if ('serviceWorker' in navigator) {
 }
 
 window.addEventListener('beforeinstallprompt', (e) => {
-        deferredPrompt.prompt();
+        e.prompt();
 });
