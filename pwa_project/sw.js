@@ -29,7 +29,7 @@ self.addEventListener('fetch', function (event) {
                             })
                             .catch(function () {
 
-                                return caches.match('/index.html');
+                                return caches.match('./index.html');
                             });
                     });
             })
