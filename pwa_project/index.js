@@ -1,6 +1,3 @@
-
-
-
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
         navigator.serviceWorker.register('./sw.js').then(function (registration) {
@@ -12,7 +9,6 @@ if ('serviceWorker' in navigator) {
         });
     });
 }
-
 var deferredPrompt= false;
 window.addEventListener("load", () => {
     deferredPrompt = true;
@@ -20,9 +16,13 @@ window.addEventListener("load", () => {
 window.addEventListener('beforeinstallprompt', (e) => {
     if(deferredPrompt){
         e.prompt();
+        e.userChoice.then(choice => {
+            if(choice.outcome === "dismissed"){
+                deferredPrompt = false;
+            }
+        })
     }else {
         console.log('trigger is not trigerred!!');
     }
 
 });
-
